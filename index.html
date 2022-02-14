@@ -49,9 +49,17 @@
             float: right;
         }
 
+        #logo_r {
+            position: absolute;
+            z-index: 999;
+            Top: 0px;
+            right: 50%;
+            float: left;
+        }
+
         #map {
             position: absolute;
-            top: 0;
+            top: 40px;
             bottom: 0;
             width: 50%;
         }
@@ -142,6 +150,10 @@
 <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
 <script src="data/depto.js"></script>
 
+<div id="logo_r">
+    <img src="images/logo2.png" width="790" height="40">
+</div>
+
 <div id="map">
     <div id='legend'>
     </div>
@@ -159,9 +171,6 @@
     </div>
     </div>
 
-    <div id="logoContainer">
-        <img src="images/logo1.png" width="100%">
-    </div>
     
     <div id="logoContainer">
         <img src="images/logo1.png" width="100%">
