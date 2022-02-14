@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <title>Visor</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+
+
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body, #top {
+            background: #ffffff;
+            width: 100%;
+            height: 40px;
+            left: 15px;
+            float: top;
+        }
+
+
+        .container {
+            position: absolute;
+            top: 23%;
+            left: 10px;
+            z-index: 999;
+            background-color: #FFFFFF;
+            padding: 10px;
+            border-radius: 7px;
+            font: 10px/12px Segoe UI, Segoe UI, Segoe UI;
+        }
+
+        #logoContainer {
+            position: absolute;
+            z-index: 999;
+            bottom: 15px;
+            left: 80%;
+            float: right;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 50%;
+        }
+
+        #gra {
+            position: absolute;
+            z-index: 999;
+            left: 50%;
+            float: right;
+        }
+
+        #legend {
+            background: #ffffff;
+            position: absolute;
+            z-index: 999;
+            bottom: 20px;
+            left: 10px;
+            padding: 0px 10px;
+            width: 200px;
+            -webkit-border-radius: 4px 4px 4px 4px;
+            border-radius: 4px 4px 4px 4px;
+            float: left;
+            font: 10px/12px Segoe UI, Segoe UI, Segoe UI;
+            text-align: left;
+        }
+
+        #legend,
+        #colors {
+            font: 10px/12px Segoe UI, Segoe UI, Segoe UI;
+            text-align: left;
+        }
+
+        .btn-group .button {
+            position: absolute;
+            z-index: 999;
+            background: #ffffff;
+            background: rgba(255, 255, 255, 0.8);
+            border: rgb(255, 255, 255);
+            font: 10px/12px Segoe UI, Segoe UI, Segoe UI;
+            width: 200px;
+            left: 10px;
+            cursor: pointer;
+            float: left;
+        }
+
+        .btn-group .button:hover {
+            background-color: #a7ada7;
+        }
+
+        select {
+            font: 10px/12px Segoe UI, Segoe UI, Segoe UI;
+            border: 1px solid transparent;
+        }
+
+        p {
+            font: 10px/12px Segoe UI, Segoe UI, Segoe UI;
+
+        }
+        g {
+            font: 14px/12px Segoe UI, Segoe UI, Segoe UI;
+
+        }
+
+        .info {
+            padding: 5px 10px;
+            font: 10px/11px Segoe UI, Segoe UI, Segoe UI;
+            background: white;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        .info h4 {
+            margin: 0 0 5px;
+            color: #777;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+<script src="data/depto.js"></script>
+
+<div id="map">
+    <div id='legend'>
+    </div>
+    <script src='src/map.js'></script>
+
+    <div class="container">
+        <b>Seleccione indicador:</b>
+        <div class="custom-select">
+        <select name="layers" onclick= 'changeIndi(this);'>
+            <option id="BEN_MEN" value="BEN_MEN" selected>Beneficiarios mensuales</option>  
+            <optgroup label="Tipo de implementación"></optgroup>
+            <option id="CONJUN" value="CONJUN">Conjunta</option>
+            </optgroup>
+        </select>
+    </div>
+    </div>
+
+    <div id="logoContainer">
+        <img src="images/logo1.png" width="100%">
+    </div>
+    
+    <div id="logoContainer">
+        <img src="images/logo1.png" width="100%">
+    </div>
+
+</div>
+<div id='gra'>
+    <g>
+        Situación:
+        En 2019, Colombia continuó siendo el país más impactado
+por la llegada de refugiados y migrantes desde Venezuela,
+concentrando la mayor parte de personas con intención de
+quedarse (1,4 M), 676.093 de ellas con estatus regular, y en
+tránsito (casi 500.000 personas) y movimientos pendulares
+en la región (cerca de 4,2 M de TMF emitidos). Además,
+más de medio millón de colombianos regresaron de
+Venezuela a mediados de 2019.
+    </g>
+    <iframe  width="750"
+    height="650"
+     src='grafica.html'></iframe>
+
+</div>
+  
+
+
+</body>
+</html>
+
